@@ -50,12 +50,15 @@ html(lang='en')
                             // https://startbootstrap.com/solution/contact-forms
                             // to get an API token!
 
-                            form.form-subscribe#contactForm(data-sb-form-api-token='API_TOKEN')
+                            form.form-subscribe#contactForm(name='contact' method='POST' data-netlify='true' netlify-honeypot='bot-field')
+
+                                input(type='hidden' name='form-name' value='contact')
+                                input(type='text' name='bot-field' tabindex='-1' autocomplete='off' hidden)
 
                                 // Email address input
                                 .row
                                     .col
-                                        input#emailAddress.form-control.form-control-lg(type='email' placeholder='Email Address' data-sb-validations='required,email')
+                                        input#emailAddress.form-control.form-control-lg(type='email' name='email' placeholder='Email Address' required)
                                         .invalid-feedback.text-white(data-sb-feedback='emailAddress:required')
                                             | Email Address is required.
                                         .invalid-feedback.text-white(data-sb-feedback='emailAddress:email')
@@ -167,12 +170,15 @@ html(lang='en')
                         // https://startbootstrap.com/solution/contact-forms
                         // to get an API token!
 
-                        form.form-subscribe#contactFormFooter(data-sb-form-api-token='API_TOKEN')
+                        form.form-subscribe#contactFormFooter(name='newsletter' method='POST' data-netlify='true' netlify-honeypot='bot-field')
+
+                            input(type='hidden' name='form-name' value='newsletter')
+                            input(type='text' name='bot-field' tabindex='-1' autocomplete='off' hidden)
 
                             // Email address input
                             .row
                                 .col
-                                    input#emailAddressBelow.form-control.form-control-lg(type='email' placeholder='Email Address' data-sb-validations='required,email')
+                                    input#emailAddressBelow.form-control.form-control-lg(type='email' name='email' placeholder='Email Address' required)
                                     .invalid-feedback.text-white(data-sb-feedback='emailAddressBelow:required')
                                         | Email Address is required.
                                     .invalid-feedback.text-white(data-sb-feedback='emailAddressBelow:email')
@@ -240,5 +246,3 @@ html(lang='en')
         // * *                               SB Forms JS                               * *
         // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
         // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')
