@@ -3,7 +3,7 @@
 * Copyright 2013-2026 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE)
 */
-document.querySelectorAll('form[data-netlify="true"]').forEach((form) => {
+document.querySelectorAll('form[name]').forEach((form) => {
 	form.addEventListener('submit', async (event) => {
 		event.preventDefault();
 

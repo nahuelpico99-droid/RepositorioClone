@@ -1,4 +1,4 @@
-document.querySelectorAll('form[data-netlify="true"]').forEach((form) => {
+document.querySelectorAll('form[name]').forEach((form) => {
 	form.addEventListener('submit', async (event) => {
 		event.preventDefault();
 
